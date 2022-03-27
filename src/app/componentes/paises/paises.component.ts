@@ -6,6 +6,9 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { MatDialog } from '@angular/material/dialog';
+import { PaisesCrearComponent} from 'src/app/componentes/paises-crear/paises-crear.component';
+import {Pais} from 'src/app/models/Pais';
 
 
 const DATA: PaisInterface[] = [];
@@ -17,10 +20,11 @@ const DATA: PaisInterface[] = [];
 })
 export class PaisesComponent implements AfterViewInit, OnInit {
   paises: any
-
+  pais:Pais = new Pais()
   posicion: Number;
 
-  constructor(private service: PaisServiceService, private route: Router, private _liveAnnouncer: LiveAnnouncer) {
+  constructor(private service: PaisServiceService, private route: Router, 
+    private _liveAnnouncer: LiveAnnouncer,public dialog:MatDialog) {
 
   }
 
@@ -68,6 +72,12 @@ export class PaisesComponent implements AfterViewInit, OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  // abrir modal de insertar país
+  formularioPais(){
+    this.dialog.open(PaisesCrearComponent)
+  }
+
+ 
 
 
 }

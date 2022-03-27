@@ -7,7 +7,7 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Ejemplo: Colombia" #input>
     </mat-form-field>
 
-    <button type="button" mat-raised-button color="primary">Insertar País</button>
+    <button type="button" (click)="formularioPais()" mat-raised-button color="primary">Insertar País</button>
 
     <!-- Tabla-->
     <table mat-table [dataSource]="dataSource" class="" matSort (matSortChange)="announceSortChange($event)">
