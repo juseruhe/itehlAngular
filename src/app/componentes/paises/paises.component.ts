@@ -11,6 +11,8 @@ import { PaisesCrearComponent} from 'src/app/componentes/paises-crear/paises-cre
 import {Pais} from 'src/app/models/Pais';
 
 
+
+
 const DATA: PaisInterface[] = [];
 
 @Component({
@@ -28,9 +30,13 @@ export class PaisesComponent implements AfterViewInit, OnInit {
 
   }
 
+
+
   ngOnInit(): void {
     this.service.mostrarPaises().subscribe(respuesta => {
-
+          
+      console.log(respuesta)
+    
       this.dataSource.data = respuesta
 
     })

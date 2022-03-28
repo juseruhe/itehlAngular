@@ -21,8 +21,10 @@ export class PaisesCrearComponent implements OnInit {
     console.log(this.pais)
    this.service.insertarPais(this.pais).subscribe(data =>{
       console.log(data)
+      
     },error=>{
       console.log(error)
+     this.dialog.closeAll()
     })
   }
 
