@@ -16,6 +16,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { PaisesCrearComponent } from './componentes/paises-crear/paises-crear.component';
+import { PaisesCrearExitosoComponent } from './componentes/paises-crear-exitoso/paises-crear-exitoso.component';
+import { PaisesCrearErrorComponent } from './componentes/paises-crear-error/paises-crear-error.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { PaisesCrearComponent } from './componentes/paises-crear/paises-crear.co
     AppComponent,
     PaisesComponent,
     PaisesCrearComponent,
+    PaisesCrearExitosoComponent,
+    PaisesCrearErrorComponent,
    
   ],
   imports: [

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-
-import{ Pais } from 'src/app/models/Pais';
+import { Router } from '@angular/router'
+import { Pais } from 'src/app/models/Pais';
 import { PaisServiceService } from 'src/app/servicios/pais-service.service';
+import { PaisesCrearExitosoComponent } from 'src/app/componentes/paises-crear-exitoso/paises-crear-exitoso.component';
+import { PaisesCrearErrorComponent } from 'src/app/componentes/paises-crear-error/paises-crear-error.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-paises-crear',
@@ -10,22 +13,28 @@ import { PaisServiceService } from 'src/app/servicios/pais-service.service';
   styleUrls: ['./paises-crear.component.css']
 })
 export class PaisesCrearComponent implements OnInit {
-  pais:Pais = new Pais()
+  pais: Pais = new Pais()
+  paisForm !: FormGroup
 
-  constructor(private service:PaisServiceService,public dialog:MatDialog) { }
+  constructor(private service: PaisServiceService, public dialog: MatDialog, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.paisForm = this.formBuilder.group({
+      nombre: ["", Validators.required]
+    })
   }
 
-  insertarPais(){
-    console.log(this.pais)
-   this.service.insertarPais(this.pais).subscribe(data =>{
-      console.log(data)
-      
-    },error=>{
-      console.log(error)
-     this.dialog.closeAll()
-    })
+  insertarPais() {
+   if(this.paisForm.valid){
+     this.service.insertarPais(this.paisForm.value).subscribe(respuesta =>{
+       this.dialog.closeAll()
+       this.dialog.open(PaisesCrearExitosoComponent)
+     },error=>{
+      this.dialog.closeAll()
+      this.dialog.open(PaisesCrearErrorComponent)
+     })
+   }
+    
   }
 
 }

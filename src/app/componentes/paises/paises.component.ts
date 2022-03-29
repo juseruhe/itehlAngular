@@ -7,8 +7,11 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatDialog } from '@angular/material/dialog';
-import { PaisesCrearComponent} from 'src/app/componentes/paises-crear/paises-crear.component';
-import {Pais} from 'src/app/models/Pais';
+import { PaisesCrearComponent } from 'src/app/componentes/paises-crear/paises-crear.component';
+import { Pais } from 'src/app/models/Pais';
+import { PaisesCrearExitosoComponent } from 'src/app/componentes/paises-crear-exitoso/paises-crear-exitoso.component';
+import { PaisesCrearErrorComponent } from 'src/app/componentes/paises-crear-error/paises-crear-error.component';
+import { Subscription } from 'rxjs';
 
 
 
@@ -22,11 +25,12 @@ const DATA: PaisInterface[] = [];
 })
 export class PaisesComponent implements AfterViewInit, OnInit {
   paises: any
-  pais:Pais = new Pais()
+  pais: Pais = new Pais()
   posicion: Number;
+  subscription: Subscription
 
-  constructor(private service: PaisServiceService, private route: Router, 
-    private _liveAnnouncer: LiveAnnouncer,public dialog:MatDialog) {
+  constructor(private service: PaisServiceService, private route: Router,
+    private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) {
 
   }
 
@@ -34,11 +38,21 @@ export class PaisesComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.service.mostrarPaises().subscribe(respuesta => {
-          
+
       console.log(respuesta)
-    
+
       this.dataSource.data = respuesta
 
+    })
+
+   this.subscription = this.service.getRefresh().subscribe(() => {
+      this.service.mostrarPaises().subscribe(respuesta => {
+
+        console.log(respuesta)
+
+        this.dataSource.data = respuesta
+
+      })
     })
   }
 
@@ -79,11 +93,11 @@ export class PaisesComponent implements AfterViewInit, OnInit {
   }
 
   // abrir modal de insertar país
-  formularioPais(){
+  formularioPais() {
     this.dialog.open(PaisesCrearComponent)
   }
 
- 
+
 
 
 }
