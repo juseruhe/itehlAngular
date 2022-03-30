@@ -18,6 +18,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { PaisesCrearComponent } from './componentes/paises-crear/paises-crear.component';
 import { PaisesCrearExitosoComponent } from './componentes/paises-crear-exitoso/paises-crear-exitoso.component';
 import { PaisesCrearErrorComponent } from './componentes/paises-crear-error/paises-crear-error.component';
+import { PaisesMostrarComponent } from './componentes/paises-mostrar/paises-mostrar.component';
+import {MatCardModule} from '@angular/material/card';
+import { PaisesEditarComponent } from './componentes/paises-editar/paises-editar.component';
+import { PaisesEditarExitosoComponent } from './componentes/paises-editar-exitoso/paises-editar-exitoso.component';
+import { PaisesEditarErrorComponent } from './componentes/paises-editar-error/paises-editar-error.component';
 
 
 @NgModule({
@@ -27,6 +32,10 @@ import { PaisesCrearErrorComponent } from './componentes/paises-crear-error/pais
     PaisesCrearComponent,
     PaisesCrearExitosoComponent,
     PaisesCrearErrorComponent,
+    PaisesMostrarComponent,
+    PaisesEditarComponent,
+    PaisesEditarExitosoComponent,
+    PaisesEditarErrorComponent,
    
   ],
   imports: [
@@ -44,7 +53,8 @@ import { PaisesCrearErrorComponent } from './componentes/paises-crear-error/pais
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
    
   ],
   providers: [],

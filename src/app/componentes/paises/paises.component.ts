@@ -9,12 +9,9 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatDialog } from '@angular/material/dialog';
 import { PaisesCrearComponent } from 'src/app/componentes/paises-crear/paises-crear.component';
 import { Pais } from 'src/app/models/Pais';
-import { PaisesCrearExitosoComponent } from 'src/app/componentes/paises-crear-exitoso/paises-crear-exitoso.component';
-import { PaisesCrearErrorComponent } from 'src/app/componentes/paises-crear-error/paises-crear-error.component';
 import { Subscription } from 'rxjs';
-
-
-
+import  {PaisesMostrarComponent} from 'src/app/componentes/paises-mostrar/paises-mostrar.component';
+import {PaisesEditarComponent} from 'src/app/componentes/paises-editar/paises-editar.component';
 
 const DATA: PaisInterface[] = [];
 
@@ -34,8 +31,6 @@ export class PaisesComponent implements AfterViewInit, OnInit {
 
   }
 
-
-
   ngOnInit(): void {
     this.service.mostrarPaises().subscribe(respuesta => {
 
@@ -45,7 +40,7 @@ export class PaisesComponent implements AfterViewInit, OnInit {
 
     })
 
-   this.subscription = this.service.getRefresh().subscribe(() => {
+    this.subscription = this.service.getRefresh().subscribe(() => {
       this.service.mostrarPaises().subscribe(respuesta => {
 
         console.log(respuesta)
@@ -97,7 +92,15 @@ export class PaisesComponent implements AfterViewInit, OnInit {
     this.dialog.open(PaisesCrearComponent)
   }
 
+  //abrir modal de mostrar País
+  mostrarPais(element: any){
+    this.dialog.open(PaisesMostrarComponent,{data: element})
+  }
 
+ // avrir modal de editar
+ editarPais(element: any){
+   this.dialog.open(PaisesEditarComponent,{data: element})
+ }
 
 
 }

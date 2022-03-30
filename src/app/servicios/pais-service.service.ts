@@ -29,12 +29,21 @@ export class PaisServiceService {
   }
 
   insertarPais(pais:any) {
-    return this.http.post<any>(this.url, pais)
+    return this.http.post(this.url, pais)
       .pipe(
         tap(() => {
           this.refresh.next()
         })
       )
+  }
+
+  actualizarPais(id:any,pais:any){
+    return this.http.put(this.url+"/"+id,pais)
+    .pipe(
+      tap(()=>{
+        this.refresh.next()
+      })
+    )
   }
 
 }
