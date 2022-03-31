@@ -7,7 +7,7 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Ejemplo: Colombia" #input>
     </mat-form-field>
 
-    <button type="button" (click)="formularioPais()" mat-raised-button color="primary">Insertar País</button>
+    <button class="crear" type="button" (click)="formularioPais()" mat-raised-button color="primary">Insertar País</button>
 
     <!-- Tabla-->
     <table mat-table [dataSource]="dataSource" class="" matSort (matSortChange)="announceSortChange($event)">
@@ -32,9 +32,9 @@
             <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">Acciones
             </th>
             <td mat-cell *matCellDef="let element"> 
-          <button type="button" (click)="mostrarPais(element)" mat-raised-button color="primary" value="{{element.id}}">Mostrar</button> 
-          <button  type="button" (click)="editarPais(element)" mat-raised-button color="accent" value="{{element.id}}">Editar</button> 
-          <button  type="button" mat-raised-button color="warn" value="{{element.id}}">Eliminar</button> 
+          <button type="button" class="acciones" (click)="mostrarPais(element)" mat-raised-button color="primary" value="{{element.id}}">Mostrar</button> 
+          <button  type="button" class="acciones" (click)="editarPais(element)" mat-raised-button color="accent" value="{{element.id}}">Editar</button> 
+          <button  type="button" class="acciones" (click)="eliminarPais(element)" mat-raised-button color="warn" value="{{element.id}}">Eliminar</button> 
         </td>
         </ng-container>
 

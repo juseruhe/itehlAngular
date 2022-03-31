@@ -6,3 +6,13 @@ table {
   font-size: 14px;
   width: 100%;
 }
+
+.acciones{
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.crear{
+  margin-top: 3px;
+  margin-bottom: 3px;
+}

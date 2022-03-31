@@ -28,7 +28,7 @@ export class PaisServiceService {
     return this.http.get<PaisInterface[]>(this.url);
   }
 
-  insertarPais(pais:any) {
+  insertarPais(pais: any) {
     return this.http.post(this.url, pais)
       .pipe(
         tap(() => {
@@ -37,13 +37,22 @@ export class PaisServiceService {
       )
   }
 
-  actualizarPais(id:any,pais:any){
-    return this.http.put(this.url+"/"+id,pais)
-    .pipe(
-      tap(()=>{
-        this.refresh.next()
-      })
-    )
+  actualizarPais(id: any, pais: any) {
+    return this.http.put(this.url + "/" + id, pais)
+      .pipe(
+        tap(() => {
+          this.refresh.next()
+        })
+      )
+  }
+
+  eliminarPais(id: any) {
+    return this.http.delete(this.url + "/" + id)
+      .pipe(
+        tap(() => {
+          this.refresh.next()
+        })
+      )
   }
 
 }

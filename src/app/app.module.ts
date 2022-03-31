@@ -23,7 +23,7 @@ import {MatCardModule} from '@angular/material/card';
 import { PaisesEditarComponent } from './componentes/paises-editar/paises-editar.component';
 import { PaisesEditarExitosoComponent } from './componentes/paises-editar-exitoso/paises-editar-exitoso.component';
 import { PaisesEditarErrorComponent } from './componentes/paises-editar-error/paises-editar-error.component';
-
+import { PaisesEliminarComponent } from './componentes/paises-eliminar/paises-eliminar.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +36,7 @@ import { PaisesEditarErrorComponent } from './componentes/paises-editar-error/pa
     PaisesEditarComponent,
     PaisesEditarExitosoComponent,
     PaisesEditarErrorComponent,
+    PaisesEliminarComponent
    
   ],
   imports: [

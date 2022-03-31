@@ -12,6 +12,7 @@ import { Pais } from 'src/app/models/Pais';
 import { Subscription } from 'rxjs';
 import  {PaisesMostrarComponent} from 'src/app/componentes/paises-mostrar/paises-mostrar.component';
 import {PaisesEditarComponent} from 'src/app/componentes/paises-editar/paises-editar.component';
+import { PaisesEliminarComponent } from '../paises-eliminar/paises-eliminar.component';
 
 const DATA: PaisInterface[] = [];
 
@@ -97,10 +98,16 @@ export class PaisesComponent implements AfterViewInit, OnInit {
     this.dialog.open(PaisesMostrarComponent,{data: element})
   }
 
- // avrir modal de editar
+ // abrir modal de editar
  editarPais(element: any){
    this.dialog.open(PaisesEditarComponent,{data: element})
  }
+
+ // abrir modal de eliminar
+eliminarPais(element: any){
+  this.dialog.open(PaisesEliminarComponent,{data: element})
+}
+
 
 
 }

@@ -13,7 +13,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./paises-crear.component.css']
 })
 export class PaisesCrearComponent implements OnInit {
-  pais: Pais = new Pais()
   paisForm !: FormGroup
 
   constructor(private service: PaisServiceService, public dialog: MatDialog, private formBuilder: FormBuilder) { }
