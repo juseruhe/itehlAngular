@@ -2,6 +2,8 @@ import { Component, OnInit,Inject } from '@angular/core';
 import { MatDialog,MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PaisServiceService } from 'src/app/servicios/pais-service.service';
+import { PaisesEliminarExitosoComponent} from 'src/app/componentes/paises-eliminar-exitoso/paises-eliminar-exitoso.component';
+import {PaisesEliminarErrorComponent} from 'src/app/componentes/paises-eliminar-error/paises-eliminar-error.component';
 
 
 @Component({
@@ -33,10 +35,11 @@ export class PaisesEliminarComponent implements OnInit {
     if(this.paisForm.valid){
       this.service.eliminarPais(this.paisForm.value.id)
       .subscribe(respuesta => {
-         alert("Eliminado correctamente")
+        this.dialog.closeAll()
+        this.dialog.open(PaisesEliminarExitosoComponent)
       }, error => {
-        alert(error.error.status+""+error.error.error)
-        console.log(error)
+        this.dialog.closeAll()
+        this.dialog.open(PaisesEliminarErrorComponent)
       })
     }
   }

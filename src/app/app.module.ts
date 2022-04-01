@@ -24,6 +24,8 @@ import { PaisesEditarComponent } from './componentes/paises-editar/paises-editar
 import { PaisesEditarExitosoComponent } from './componentes/paises-editar-exitoso/paises-editar-exitoso.component';
 import { PaisesEditarErrorComponent } from './componentes/paises-editar-error/paises-editar-error.component';
 import { PaisesEliminarComponent } from './componentes/paises-eliminar/paises-eliminar.component';
+import { PaisesEliminarExitosoComponent } from './componentes/paises-eliminar-exitoso/paises-eliminar-exitoso.component';
+import { PaisesEliminarErrorComponent } from './componentes/paises-eliminar-error/paises-eliminar-error.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { PaisesEliminarComponent } from './componentes/paises-eliminar/paises-el
     PaisesEditarComponent,
     PaisesEditarExitosoComponent,
     PaisesEditarErrorComponent,
-    PaisesEliminarComponent
+    PaisesEliminarComponent,
+    PaisesEliminarExitosoComponent,
+    PaisesEliminarErrorComponent
    
   ],
   imports: [
