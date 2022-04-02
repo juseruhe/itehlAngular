@@ -1,1 +1,14 @@
-<p>modalidades-editar works!</p>
+<h2 mat-dialog-title>Editar Modalidad</h2>
+<form [formGroup]="modalidadForm">
+    <mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Modalidad</mat-label>
+            <input type="hidden" formControlName="id">
+            <input formControlName="nombre" required matInput>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button (click)="actualizarModalidad()" mat-raised-button color="accent"><mat-icon>check</mat-icon>  Actualizar</button>
+        <button mat-raised-button color="warn" mat-dialog-close><mat-icon>clear</mat-icon>  Cerrar</button>
+    </mat-dialog-actions>
+</form>

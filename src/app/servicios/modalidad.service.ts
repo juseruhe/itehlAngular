@@ -31,4 +31,22 @@ export class ModalidadService {
         })
       )
   }
+
+  actualizarModalidad(id:any,modalidad:any){
+    return this.http.put(this.url+"/"+id,modalidad)
+    .pipe(
+      tap(() => {
+        this.refresh.next()
+      })
+    )
+  }
+
+  eliminarModalidad(id:any){
+    return this.http.delete(this.url+"/"+id)
+    .pipe(
+      tap(()=>{
+        this.refresh.next()
+      })
+    )
+  }
 }

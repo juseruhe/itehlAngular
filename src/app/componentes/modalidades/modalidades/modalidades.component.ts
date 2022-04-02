@@ -10,6 +10,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import {ModalidadesCrearComponent} from 'src/app/componentes/modalidades/modalidades-crear/modalidades-crear.component';
 import { ModalidadesMostrarComponent } from '../modalidades-mostrar/modalidades-mostrar.component';
+import { ModalidadesEditarComponent } from '../modalidades-editar/modalidades-editar.component';
+import { ModalidadesEliminarComponent } from '../../modalidades/modalidades-eliminar/modalidades-eliminar.component';
 
 const DATA: Modalidad[] = [];
 
@@ -90,6 +92,16 @@ export class ModalidadesComponent implements AfterViewInit, OnInit {
   // Llamar al modal de mostrar modalidades
   mostrarModalidad(element: any){
     this.dialog.open(ModalidadesMostrarComponent,{data: element})
+  }
+
+  // Llamar al modal de editar
+  editarModalidad(element: any){
+    this.dialog.open(ModalidadesEditarComponent,{data: element})
+  }
+
+  // Llamar al modal de eliminar
+  eliminarModalidad(element:any){
+    this.dialog.open(ModalidadesEliminarComponent,{data: element})
   }
 
 }

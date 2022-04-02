@@ -32,6 +32,11 @@ import { ModalidadesCrearExitosoComponent } from './componentes/modalidades/moda
 import { ModalidadesCrearErrorComponent } from './componentes/modalidades/modalidades-crear-error/modalidades-crear-error.component';
 import { ModalidadesMostrarComponent } from './componentes/modalidades/modalidades-mostrar/modalidades-mostrar.component';
 import { ModalidadesEditarComponent } from './componentes/modalidades/modalidades-editar/modalidades-editar.component';
+import { ModalidadesEditarExitosoComponent } from './componentes/modalidades/modalidades-editar-exitoso/modalidades-editar-exitoso.component';
+import { ModalidadesEditarErrorComponent } from './componentes/modalidades/modalidades-editar-error/modalidades-editar-error.component';
+import { ModalidadesEliminarComponent } from './componentes/modalidades/modalidades-eliminar/modalidades-eliminar.component';
+import { ModalidadesEliminarExitosoComponent } from './componentes/modalidades/modalidades-eliminar-exitoso/modalidades-eliminar-exitoso.component';
+import { ModalidadesEliminarErrorComponent } from './componentes/modalidades/modalidades-eliminar-error/modalidades-eliminar-error.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +57,12 @@ import { ModalidadesEditarComponent } from './componentes/modalidades/modalidade
     ModalidadesCrearExitosoComponent,
     ModalidadesCrearErrorComponent,
     ModalidadesMostrarComponent,
-    ModalidadesEditarComponent
+    ModalidadesEditarComponent,
+    ModalidadesEditarExitosoComponent,
+    ModalidadesEditarErrorComponent,
+    ModalidadesEliminarComponent,
+    ModalidadesEliminarExitosoComponent,
+    ModalidadesEliminarErrorComponent
    
   ],
   imports: [
