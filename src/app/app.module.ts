@@ -26,6 +26,12 @@ import { PaisesEditarErrorComponent } from './componentes/paises-editar-error/pa
 import { PaisesEliminarComponent } from './componentes/paises-eliminar/paises-eliminar.component';
 import { PaisesEliminarExitosoComponent } from './componentes/paises-eliminar-exitoso/paises-eliminar-exitoso.component';
 import { PaisesEliminarErrorComponent } from './componentes/paises-eliminar-error/paises-eliminar-error.component';
+import { ModalidadesComponent } from './componentes/modalidades/modalidades/modalidades.component';
+import { ModalidadesCrearComponent } from './componentes/modalidades/modalidades-crear/modalidades-crear.component';
+import { ModalidadesCrearExitosoComponent } from './componentes/modalidades/modalidades-crear-exitoso/modalidades-crear-exitoso.component';
+import { ModalidadesCrearErrorComponent } from './componentes/modalidades/modalidades-crear-error/modalidades-crear-error.component';
+import { ModalidadesMostrarComponent } from './componentes/modalidades/modalidades-mostrar/modalidades-mostrar.component';
+import { ModalidadesEditarComponent } from './componentes/modalidades/modalidades-editar/modalidades-editar.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,13 @@ import { PaisesEliminarErrorComponent } from './componentes/paises-eliminar-erro
     PaisesEditarErrorComponent,
     PaisesEliminarComponent,
     PaisesEliminarExitosoComponent,
-    PaisesEliminarErrorComponent
+    PaisesEliminarErrorComponent,
+    ModalidadesComponent,
+    ModalidadesCrearComponent,
+    ModalidadesCrearExitosoComponent,
+    ModalidadesCrearErrorComponent,
+    ModalidadesMostrarComponent,
+    ModalidadesEditarComponent
    
   ],
   imports: [

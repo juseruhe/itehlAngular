@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Insertar Modalidad</h2>
+<form [formGroup]="modalidadForm">
+<mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Modalidad</mat-label>
+        <input  formControlName="nombre" required matInput>
+      </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button (click)="insertarModalidad()"  mat-raised-button color="primary"><mat-icon>check</mat-icon>  Insertar</button>
+    <button  mat-raised-button color="warn" mat-dialog-close><mat-icon>clear</mat-icon>  Cerrar</button>
+</mat-dialog-actions>
+</form>

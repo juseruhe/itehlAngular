@@ -8,7 +8,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatDialog } from '@angular/material/dialog';
 import { PaisesCrearComponent } from 'src/app/componentes/paises-crear/paises-crear.component';
-import { Pais } from 'src/app/models/Pais';
 import { Subscription } from 'rxjs';
 import  {PaisesMostrarComponent} from 'src/app/componentes/paises-mostrar/paises-mostrar.component';
 import {PaisesEditarComponent} from 'src/app/componentes/paises-editar/paises-editar.component';
@@ -23,7 +22,6 @@ const DATA: PaisInterface[] = [];
 })
 export class PaisesComponent implements AfterViewInit, OnInit {
   paises: any
-  pais: Pais = new Pais()
   posicion: Number;
   subscription: Subscription
 

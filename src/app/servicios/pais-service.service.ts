@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pais } from 'src/app/models/Pais'
 import { Observable, Subject } from 'rxjs';
 import { PaisInterface } from '../models/PaisInterface';
 import { tap } from 'rxjs/operators';
@@ -13,10 +12,7 @@ export class PaisServiceService {
 
   private refresh = new Subject<void>()
 
-  constructor(private http: HttpClient) {
-
-  }
-
+  constructor(private http: HttpClient) {}
 
   paises: any
 

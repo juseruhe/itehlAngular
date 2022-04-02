@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router'
-import { Pais } from 'src/app/models/Pais';
+import { Router } from '@angular/router';
 import { PaisServiceService } from 'src/app/servicios/pais-service.service';
 import { PaisesCrearExitosoComponent } from 'src/app/componentes/paises-crear-exitoso/paises-crear-exitoso.component';
 import { PaisesCrearErrorComponent } from 'src/app/componentes/paises-crear-error/paises-crear-error.component';
