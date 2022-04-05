@@ -1,0 +1,82 @@
+<!-- Datatable-->
+
+<!-- Filtro-->
+<div class="mat-elevation-z8">
+    <mat-form-field appearance="standard">
+        <mat-label>Buscar:</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ejemplo: Contabilidad" #input>
+    </mat-form-field>
+
+    <button class="crear" (click)="formularioCurso()"  type="button"  mat-raised-button color="primary"><mat-icon>add_circle</mat-icon>  Insertar Curso</button>
+
+    <!-- Tabla-->
+    <table mat-table [dataSource]="dataSource" class="" matSort (matSortChange)="announceSortChange($event)">
+
+        <!-- Posición -->
+        <ng-container matColumnDef="posicion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by posicion"> #
+            </th>
+            <td mat-cell *matCellDef="let i=index;"> {{i+1}} </td>
+        </ng-container>
+
+
+        <!-- Curso -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nombre"> Curso
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <!-- Costo -->
+        <ng-container matColumnDef="costo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by costo"> Costo
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.costo}} </td>
+        </ng-container>
+
+         <!-- Descripción -->
+         <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by descripcion"> Descripción
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        </ng-container>
+
+        <!-- Dirigido a -->
+        <ng-container matColumnDef="dirigido_a">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by dirigido_a"> Dirigido a:
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.dirigido_a}} </td>
+        </ng-container>
+
+         <!-- Modalidad-->
+         <ng-container matColumnDef="modalidad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by modalidad"> Modalidad
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.modalidad.nombre}} </td>
+        </ng-container>
+
+        <!-- Acciones -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">Acciones
+            </th>
+            <td mat-cell *matCellDef="let element"> 
+          <button type="button" class="acciones"  mat-raised-button color="primary" value="{{element.id}}"><mat-icon>visibility</mat-icon>  Mostrar</button> 
+          <button  type="button" class="acciones" mat-raised-button color="accent" value="{{element.id}}"><mat-icon>edit</mat-icon>  Editar</button> 
+          <button  type="button" class="acciones"  mat-raised-button color="warn" value="{{element.id}}"><mat-icon>remove_circle</mat-icon>  Eliminar</button> 
+        </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No se encontraron datos en la búsqueda {{input.value}}</td>
+        </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5,10, 25,50,100]" >
+    </mat-paginator>
+</div>
+

@@ -37,6 +37,11 @@ import { ModalidadesEditarErrorComponent } from './componentes/modalidades/modal
 import { ModalidadesEliminarComponent } from './componentes/modalidades/modalidades-eliminar/modalidades-eliminar.component';
 import { ModalidadesEliminarExitosoComponent } from './componentes/modalidades/modalidades-eliminar-exitoso/modalidades-eliminar-exitoso.component';
 import { ModalidadesEliminarErrorComponent } from './componentes/modalidades/modalidades-eliminar-error/modalidades-eliminar-error.component';
+import { CursosComponent } from './componentes/cursos/cursos/cursos.component';
+import { CursosCrearComponent } from './componentes/cursos/cursos-crear/cursos-crear.component';
+import {MatSelectModule} from '@angular/material/select';
+import { CursosCrearExitosoComponent } from './componentes/cursos/cursos-crear-exitoso/cursos-crear-exitoso.component';
+import { CursosCrearErrorComponent } from './componentes/cursos/cursos-crear-error/cursos-crear-error.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +67,11 @@ import { ModalidadesEliminarErrorComponent } from './componentes/modalidades/mod
     ModalidadesEditarErrorComponent,
     ModalidadesEliminarComponent,
     ModalidadesEliminarExitosoComponent,
-    ModalidadesEliminarErrorComponent
+    ModalidadesEliminarErrorComponent,
+    CursosComponent,
+    CursosCrearComponent,
+    CursosCrearExitosoComponent,
+    CursosCrearErrorComponent
    
   ],
   imports: [
@@ -81,7 +90,8 @@ import { ModalidadesEliminarErrorComponent } from './componentes/modalidades/mod
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule
    
   ],
   providers: [],

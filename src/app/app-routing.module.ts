@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CursosComponent } from './componentes/cursos/cursos/cursos.component';
 import { ModalidadesComponent } from './componentes/modalidades/modalidades/modalidades.component';
 import { PaisesComponent } from './componentes/paises/paises.component';
 
 const routes: Routes = [
   {path:'paises',component:PaisesComponent},
-  {path:'modalidades',component:ModalidadesComponent}
+  {path:'modalidades',component:ModalidadesComponent},
+  {path:'cursos',component:CursosComponent}
+
 ];
 
 @NgModule({
