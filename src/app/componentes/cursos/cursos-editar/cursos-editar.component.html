@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Editar Curso</h2>
+<form [formGroup]="cursoForm">
+    <mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Curso</mat-label>
+            <input type="hidden" formControlName="id">
+            <input formControlName="nombre" required matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Costo:</mat-label>
+            <span matPrefix>$&nbsp;</span>
+            <input type="number" formControlName="costo" matInput>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Descripción:</mat-label>
+            <textarea matInput formControlName="descripcion" cols="30" rows="10"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Dirigido a:</mat-label>
+            <textarea matInput formControlName="dirigido_a" cols="30" rows="10"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Modalidad:</mat-label>
+          <mat-select formControlName="modalidad_id">
+            <mat-option  *ngFor="let modalidad of modalidades" [value]="modalidad.id">{{modalidad.nombre}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button (click)="actualizarCurso()" mat-raised-button color="accent">
+            <mat-icon>check</mat-icon> Actualizar
+        </button>
+        <button mat-raised-button color="warn" mat-dialog-close>
+            <mat-icon>clear</mat-icon> Cerrar
+        </button>
+    </mat-dialog-actions>
+</form>

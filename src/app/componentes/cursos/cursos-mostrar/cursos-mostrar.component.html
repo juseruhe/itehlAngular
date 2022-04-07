@@ -1,16 +1,23 @@
 <mat-card>
-    <mat-card-title mat-dialog-title>País</mat-card-title>
+
+    <mat-card-title mat-dialog-title>Curso: {{mostrarCurso.nombre}}</mat-card-title>
+
     <mat-card-content>
         <mat-dialog-content>
-            <h3>{{mostrarPais.nombre}}</h3>
+            <p><b>Costo:</b>  ${{mostrarCurso.costo}}</p>
+            <p><b>Descripción:</b> {{mostrarCurso.descripcion}}</p>
+            <p><b>Dirigido a:</b> {{mostrarCurso.dirigido_a}}</p>
+            <p><b>Modalidad:</b> {{mostrarCurso.modalidad.nombre}}</p>
         </mat-dialog-content>
     </mat-card-content>
 
     <mat-card-actions>
+
         <mat-dialog-actions>
             <button mat-raised-button color="warn" mat-dialog-close>
                 <mat-icon>clear</mat-icon> Cerrar
             </button>
         </mat-dialog-actions>
     </mat-card-actions>
+
 </mat-card>

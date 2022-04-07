@@ -15,3 +15,12 @@ table {
     margin-top: 3px;
     margin-bottom: 3px;
   }
+
+  th{
+    border-right: solid 1px #fcfafa;
+  }
+
+  td{
+    border-right: solid 1px #fcfafa;
+  }
+

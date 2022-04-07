@@ -1,7 +1,15 @@
-<h2 mat-dialog-title>Modalidad</h2>
-<mat-dialog-content>
-    <h3>{{mostrarModalidad.nombre}}</h3>
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-raised-button color="warn" mat-dialog-close><mat-icon>clear</mat-icon>  Cerrar</button>
-</mat-dialog-actions>
+<mat-card>
+    <mat-card-title mat-dialog-title>Modalidad</mat-card-title>
+    <mat-card-content>
+        <mat-dialog-content>
+            <h3>{{mostrarModalidad.nombre}}</h3>
+        </mat-dialog-content>
+    </mat-card-content>
+    <mat-card-actions>
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close>
+                <mat-icon>clear</mat-icon> Cerrar
+            </button>
+        </mat-dialog-actions>
+    </mat-card-actions>
+</mat-card>

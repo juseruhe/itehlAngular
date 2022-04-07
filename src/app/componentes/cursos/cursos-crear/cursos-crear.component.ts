@@ -37,7 +37,7 @@ export class CursosCrearComponent implements OnInit {
   insertarCurso(){
   if(this.cursoForm.valid){
     this.cursoForm.value.modalidad = { id: this.cursoForm.value.modalidad_id}
-     this.service.insertarModalidad(this.cursoForm.value).subscribe(respuesta => {
+     this.service.insertarCurso(this.cursoForm.value).subscribe(respuesta => {
          this.dialog.closeAll()
          this.dialog.open(CursosCrearExitosoComponent)
      }, error => {

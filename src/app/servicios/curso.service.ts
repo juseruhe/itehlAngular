@@ -23,13 +23,31 @@ export class CursoService {
     return this.http.get<Curso[]>(this.url)
  }
 
- insertarModalidad(curso: any) {
+ insertarCurso(curso: any) {
   return this.http.post(this.url,curso)
     .pipe(
       tap(() => {
         this.refresh.next()
       })
     )
+}
+
+actualizarCurso(id:any,curso: any){
+  return this.http.put(this.url+"/"+id,curso)
+  .pipe(
+    tap(() => {
+      this.refresh.next();
+    })
+  )
+}
+
+eliminarCurso(id:any){
+  return this.http.delete(this.url+"/"+id)
+  .pipe(
+    tap(()=>{
+      this.refresh.next();
+    })
+  )
 }
 
 }

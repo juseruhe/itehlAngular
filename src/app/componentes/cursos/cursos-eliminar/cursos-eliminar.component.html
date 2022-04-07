@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Eliminar Curso </h2>
+<form [formGroup]="cursoForm">
+    <mat-dialog-content>
+        <p>¿Desea eliminar el curso <b>{{this.eliminarCurso.nombre}}</b>?</p>
+        <input type="hidden" formControlName="id" mat-input>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button (click)="borrarCurso()" mat-raised-button color="warn"><mat-icon>check</mat-icon> Si, Aceptar</button>
+        <button mat-raised-button color="accent" mat-dialog-close><mat-icon>close</mat-icon>  No, Cancelar, Cerrar</button>
+    </mat-dialog-actions>
+</form>

@@ -42,6 +42,15 @@ import { CursosCrearComponent } from './componentes/cursos/cursos-crear/cursos-c
 import {MatSelectModule} from '@angular/material/select';
 import { CursosCrearExitosoComponent } from './componentes/cursos/cursos-crear-exitoso/cursos-crear-exitoso.component';
 import { CursosCrearErrorComponent } from './componentes/cursos/cursos-crear-error/cursos-crear-error.component';
+import { CursosMostrarComponent } from './componentes/cursos/cursos-mostrar/cursos-mostrar.component';
+import { CursosEditarComponent } from './componentes/cursos/cursos-editar/cursos-editar.component';
+import { CursosEditarExitosoComponent } from './componentes/cursos/cursos-editar-exitoso/cursos-editar-exitoso.component';
+import { CursosEditarErrorComponent } from './componentes/cursos/cursos-editar-error/cursos-editar-error.component';
+import { CursosEliminarComponent } from './componentes/cursos/cursos-eliminar/cursos-eliminar.component';
+import { CursosEliminarExitosoComponent } from './componentes/cursos/cursos-eliminar-exitoso/cursos-eliminar-exitoso.component';
+import { CursosEliminarErrorComponent } from './componentes/cursos/cursos-eliminar-error/cursos-eliminar-error.component';
+
+
 
 @NgModule({
   declarations: [
@@ -71,7 +80,15 @@ import { CursosCrearErrorComponent } from './componentes/cursos/cursos-crear-err
     CursosComponent,
     CursosCrearComponent,
     CursosCrearExitosoComponent,
-    CursosCrearErrorComponent
+    CursosCrearErrorComponent,
+    CursosMostrarComponent,
+    CursosEditarComponent,
+    CursosEditarExitosoComponent,
+    CursosEditarErrorComponent,
+    CursosEliminarComponent,
+    CursosEliminarExitosoComponent,
+    CursosEliminarErrorComponent,
+    
    
   ],
   imports: [

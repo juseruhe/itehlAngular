@@ -9,7 +9,9 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import {CursosCrearComponent} from 'src/app/componentes/cursos/cursos-crear/cursos-crear.component'
-
+import {CursosMostrarComponent} from 'src/app/componentes/cursos/cursos-mostrar/cursos-mostrar.component'
+import {CursosEditarComponent} from 'src/app/componentes/cursos/cursos-editar/cursos-editar.component'
+import {CursosEliminarComponent} from 'src/app/componentes/cursos/cursos-eliminar/cursos-eliminar.component'
 
 const DATA: Curso[] = [];
 
@@ -80,5 +82,20 @@ export class CursosComponent implements AfterViewInit, OnInit {
   // llamar el modal insertar curso
   formularioCurso(){
     this.dialog.open(CursosCrearComponent)
+  }
+
+  // Llamar el modal de mostrar
+  mostrarCurso(element: any){
+    this.dialog.open(CursosMostrarComponent,{data: element})
+  }
+
+  // Llamar al modal de editar
+  editarCurso(element: any){
+    this.dialog.open(CursosEditarComponent,{data:element})
+  }
+
+  // Llamar al modal de eliminar
+  eliminarCurso(element: any){
+    this.dialog.open(CursosEliminarComponent,{data:element})
   }
 }
