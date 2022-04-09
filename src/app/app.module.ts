@@ -49,7 +49,19 @@ import { CursosEditarErrorComponent } from './componentes/cursos/cursos-editar-e
 import { CursosEliminarComponent } from './componentes/cursos/cursos-eliminar/cursos-eliminar.component';
 import { CursosEliminarExitosoComponent } from './componentes/cursos/cursos-eliminar-exitoso/cursos-eliminar-exitoso.component';
 import { CursosEliminarErrorComponent } from './componentes/cursos/cursos-eliminar-error/cursos-eliminar-error.component';
-
+import { DescuentosComponent } from './componentes/descuentos/descuentos/descuentos.component';
+import { DescuentosCrearComponent } from './componentes/descuentos/descuentos-crear/descuentos-crear.component';
+import { DescuentosCrearExitosoComponent } from './componentes/descuentos/descuentos-crear-exitoso/descuentos-crear-exitoso.component';
+import { DescuentosCrearErrorComponent } from './componentes/descuentos/descuentos-crear-error/descuentos-crear-error.component';
+import { DescuentosMostrarComponent } from './componentes/descuentos/descuentos-mostrar/descuentos-mostrar.component';
+import { DescuentosEditarComponent } from './componentes/descuentos/descuentos-editar/descuentos-editar.component';
+import { DescuentosEditarExitosoComponent } from './componentes/descuentos/descuentos-editar-exitoso/descuentos-editar-exitoso.component';
+import { DescuentosEditarErrorComponent } from './componentes/descuentos/descuentos-editar-error/descuentos-editar-error.component';
+import { DescuentosEliminarComponent } from './componentes/descuentos/descuentos-eliminar/descuentos-eliminar.component';
+import { DescuentosEliminarExitosoComponent } from './componentes/descuentos/descuentos-eliminar-exitoso/descuentos-eliminar-exitoso.component';
+import { DescuentosEliminarErrorComponent } from './componentes/descuentos/descuentos-eliminar-error/descuentos-eliminar-error.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -88,6 +100,17 @@ import { CursosEliminarErrorComponent } from './componentes/cursos/cursos-elimin
     CursosEliminarComponent,
     CursosEliminarExitosoComponent,
     CursosEliminarErrorComponent,
+    DescuentosComponent,
+    DescuentosCrearComponent,
+    DescuentosCrearExitosoComponent,
+    DescuentosCrearErrorComponent,
+    DescuentosMostrarComponent,
+    DescuentosEditarComponent,
+    DescuentosEditarExitosoComponent,
+    DescuentosEditarErrorComponent,
+    DescuentosEliminarComponent,
+    DescuentosEliminarExitosoComponent,
+    DescuentosEliminarErrorComponent,
     
    
   ],
@@ -108,7 +131,9 @@ import { CursosEliminarErrorComponent } from './componentes/cursos/cursos-elimin
     MatIconModule,
     MatDialogModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
    
   ],
   providers: [],

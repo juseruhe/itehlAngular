@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .acciones{
+    margin: 3px;
+  }
+  
+  .crear{
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  th{
+    border-right: solid 1px #fcfafa;
+  }
+
+  td{
+    border-right: solid 1px #fcfafa;
+  }
