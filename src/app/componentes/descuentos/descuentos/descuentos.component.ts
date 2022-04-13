@@ -9,6 +9,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { DescuentosCrearComponent } from '../descuentos-crear/descuentos-crear.component';
+import { DatePipe } from '@angular/common';
 
 const DATA: Descuento[] = [];
 
@@ -20,6 +21,7 @@ const DATA: Descuento[] = [];
 export class DescuentosComponent implements OnInit {
   descuentos: any
   subscription: Subscription
+  pipe = new DatePipe('en-US');
 
   constructor(private service: DescuentoService, private route: Router,
     private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) { }
@@ -66,7 +68,7 @@ export class DescuentosComponent implements OnInit {
     }
   
     // Datatable
-    displayedColumns: string[] = ['posicion', 'nombre','curso','modalidad','descuento','pais','id'];
+    displayedColumns: string[] = ['posicion', 'nombre','curso','modalidad','descuento','pais','fecha_final','id'];
     dataSource = new MatTableDataSource<Descuento>([]);
   
     // Filtro

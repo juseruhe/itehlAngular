@@ -35,7 +35,9 @@ export class ModalidadesEliminarComponent implements OnInit {
         this.dialog.open(ModalidadesEliminarExitosoComponent)
       }, error => {
         this.dialog.closeAll()
-        this.dialog.open(ModalidadesEliminarErrorComponent)
+        console.log(error)
+        this.dialog.open(ModalidadesEliminarErrorComponent,{data: error})
+       
       })
     }
   }

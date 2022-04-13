@@ -1,38 +1,35 @@
 <h2 mat-dialog-title>Insertar Curso</h2>
 <form [formGroup]="cursoForm">
-<mat-dialog-content>
+  <mat-dialog-content>
     <mat-form-field appearance="fill">
-        <mat-label>Curso:</mat-label>
-        <input  formControlName="nombre" required matInput>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>Costo:</mat-label>
-        <input type="number"  formControlName="costo" required matInput>
-        <span matPrefix>$&nbsp;</span>
-      </mat-form-field>
-
-      
-      <mat-form-field appearance="fill" >
-        <mat-label>Descripción:</mat-label>
-       <textarea matInput formControlName="descripcion"  cols="30" rows="10"></textarea>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill" >
-        <mat-label>Dirigido a:</mat-label>
-       <textarea matInput formControlName="dirigido_a"  cols="30" rows="10"></textarea>
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Modalidad:</mat-label>
-      <mat-select formControlName="modalidad_id">
-        <mat-option  *ngFor="let modalidad of modalidades" [value]="modalidad.id">{{modalidad.nombre}}</mat-option>
-      </mat-select>
+      <mat-label>Curso:</mat-label>
+      <input formControlName="nombre" required matInput>
     </mat-form-field>
 
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button (click)="insertarCurso()"  mat-raised-button color="primary"><mat-icon>check</mat-icon>  Insertar</button>
-    <button  mat-raised-button color="warn" mat-dialog-close><mat-icon>clear</mat-icon>  Cerrar</button>
-</mat-dialog-actions>
+    <mat-form-field appearance="fill">
+      <mat-label>Costo:</mat-label>
+      <input type="number" formControlName="costo" required matInput>
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Descripción:</mat-label>
+      <textarea matInput formControlName="descripcion" cols="30" rows="10"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Dirigido a:</mat-label>
+      <textarea matInput formControlName="dirigido_a" cols="30" rows="10"></textarea>
+    </mat-form-field>
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button (click)="insertarCurso()" mat-raised-button color="primary">
+      <mat-icon>check</mat-icon> Insertar
+    </button>
+    <button mat-raised-button color="warn" mat-dialog-close>
+      <mat-icon>clear</mat-icon> Cerrar
+    </button>
+  </mat-dialog-actions>
 </form>

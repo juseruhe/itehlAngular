@@ -16,11 +16,13 @@ table {
     margin-bottom: 3px;
   }
 
+
   th{
-    border-right: solid 1px #fcfafa;
+    border-right: solid 1px #636161;
+    
   }
 
   td{
-    border-right: solid 1px #fcfafa;
+    border-right: solid 1px #636161;
   }
 

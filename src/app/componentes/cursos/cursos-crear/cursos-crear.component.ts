@@ -3,8 +3,8 @@ import { ModalidadService } from 'src/app/servicios/modalidad.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CursoService } from 'src/app/servicios/curso.service';
-import {CursosCrearExitosoComponent} from 'src/app/componentes/cursos/cursos-crear-exitoso/cursos-crear-exitoso.component'
-import {CursosCrearErrorComponent} from 'src/app/componentes/cursos/cursos-crear-error/cursos-crear-error.component'
+import { CursosCrearExitosoComponent } from 'src/app/componentes/cursos/cursos-crear-exitoso/cursos-crear-exitoso.component'
+import { CursosCrearErrorComponent } from 'src/app/componentes/cursos/cursos-crear-error/cursos-crear-error.component'
 
 @Component({
   selector: 'app-cursos-crear',
@@ -16,34 +16,32 @@ export class CursosCrearComponent implements OnInit {
   cursoForm !: FormGroup
 
 
-  constructor(private modalidadService: ModalidadService, public dialog: MatDialog, 
+  constructor(private modalidadService: ModalidadService, public dialog: MatDialog,
     private formBuilder: FormBuilder, private service: CursoService) { }
 
   ngOnInit(): void {
-    this.modalidadService.mostrarModalidades().subscribe(respuesta =>{
+    this.modalidadService.mostrarModalidades().subscribe(respuesta => {
       console.log(respuesta)
       this.modalidades = respuesta
     })
 
     this.cursoForm = this.formBuilder.group({
-      nombre: ["",Validators.required],
-      costo: ["",Validators.required],
-      descripcion:["",Validators.required],
-      dirigido_a: ["",Validators.required],
-      modalidad_id: ["",Validators.required]
+      nombre: ["", Validators.required],
+      costo: ["", Validators.required],
+      descripcion: ["", Validators.required],
+      dirigido_a: ["", Validators.required]
     })
   }
- 
-  insertarCurso(){
-  if(this.cursoForm.valid){
-    this.cursoForm.value.modalidad = { id: this.cursoForm.value.modalidad_id}
-     this.service.insertarCurso(this.cursoForm.value).subscribe(respuesta => {
-         this.dialog.closeAll()
-         this.dialog.open(CursosCrearExitosoComponent)
-     }, error => {
+
+  insertarCurso() {
+    if (this.cursoForm.valid) {
+      this.service.insertarCurso(this.cursoForm.value).subscribe(respuesta => {
+        this.dialog.closeAll()
+        this.dialog.open(CursosCrearExitosoComponent)
+      }, error => {
         this.dialog.closeAll()
         this.dialog.open(CursosCrearErrorComponent)
-     })
+      })
     }
   }
 

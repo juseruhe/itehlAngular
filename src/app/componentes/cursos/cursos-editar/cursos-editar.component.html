@@ -22,14 +22,6 @@
             <textarea matInput formControlName="dirigido_a" cols="30" rows="10"></textarea>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>Modalidad:</mat-label>
-          <mat-select formControlName="modalidad_id">
-            <mat-option  *ngFor="let modalidad of modalidades" [value]="modalidad.id">{{modalidad.nombre}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-    
-
     </mat-dialog-content>
     <mat-dialog-actions>
         <button (click)="actualizarCurso()" mat-raised-button color="accent">
