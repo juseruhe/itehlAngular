@@ -62,6 +62,17 @@ import { DescuentosEliminarExitosoComponent } from './componentes/descuentos/des
 import { DescuentosEliminarErrorComponent } from './componentes/descuentos/descuentos-eliminar-error/descuentos-eliminar-error.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CursosModalidadesComponent } from './componentes/cursos-modalidades/cursos-modalidades/cursos-modalidades.component';
+import { CursosModalidadesCrearComponent } from './componentes/cursos-modalidades/cursos-modalidades-crear/cursos-modalidades-crear.component';
+import { CursosModalidadesCrearExitosoComponent } from './componentes/cursos-modalidades/cursos-modalidades-crear-exitoso/cursos-modalidades-crear-exitoso.component';
+import { CursosModalidadesCrearErrorComponent } from './componentes/cursos-modalidades/cursos-modalidades-crear-error/cursos-modalidades-crear-error.component';
+import { CursosModalidadesMostrarComponent } from './componentes/cursos-modalidades/cursos-modalidades-mostrar/cursos-modalidades-mostrar.component';
+import { CursosModalidadesEditarComponent } from './componentes/cursos-modalidades/cursos-modalidades-editar/cursos-modalidades-editar.component';
+import { CursosModalidadesEditarExitosoComponent } from './componentes/cursos-modalidades/cursos-modalidades-editar-exitoso/cursos-modalidades-editar-exitoso.component';
+import { CursosModalidadesEditarErrorComponent } from './componentes/cursos-modalidades/cursos-modalidades-editar-error/cursos-modalidades-editar-error.component';
+import { CursosModalidadesEliminarComponent } from './componentes/cursos-modalidades/cursos-modalidades-eliminar/cursos-modalidades-eliminar.component';
+import { CursosModalidadesEliminarExitosoComponent } from './componentes/cursos-modalidades/cursos-modalidades-eliminar-exitoso/cursos-modalidades-eliminar-exitoso.component';
+import { CursosModalidadesEliminarErrorComponent } from './componentes/cursos-modalidades/cursos-modalidades-eliminar-error/cursos-modalidades-eliminar-error.component';
 
 
 @NgModule({
@@ -111,6 +122,17 @@ import { MatNativeDateModule } from '@angular/material/core';
     DescuentosEliminarComponent,
     DescuentosEliminarExitosoComponent,
     DescuentosEliminarErrorComponent,
+    CursosModalidadesComponent,
+    CursosModalidadesCrearComponent,
+    CursosModalidadesCrearExitosoComponent,
+    CursosModalidadesCrearErrorComponent,
+    CursosModalidadesMostrarComponent,
+    CursosModalidadesEditarComponent,
+    CursosModalidadesEditarExitosoComponent,
+    CursosModalidadesEditarErrorComponent,
+    CursosModalidadesEliminarComponent,
+    CursosModalidadesEliminarExitosoComponent,
+    CursosModalidadesEliminarErrorComponent,
     
    
   ],

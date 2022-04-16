@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Insertar Curso/Modalidad</h2>
+<form [formGroup]="cursoModalidadForm">
+  <mat-dialog-content>
+  
+     <input mat-input type="hidden" formControlName="id" [value]="editarCursoModalidad">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Curso:</mat-label>
+      <mat-select   formControlName="curso_id">
+        <mat-option   *ngFor="let curso of cursos" [value]="curso.id">{{curso.nombre}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Modalidad:</mat-label>
+      <mat-select formControlName="modalidad_id">
+        <mat-option *ngFor="let modalidad of modalidades" [value]="modalidad.id">{{modalidad.nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button (click)="actualizarCursoModalidad()"  mat-raised-button color="accent">
+      <mat-icon>check</mat-icon> Actualizar
+    </button>
+    <button mat-raised-button color="warn" mat-dialog-close>
+      <mat-icon>clear</mat-icon> Cerrar
+    </button>
+  </mat-dialog-actions>
+</form>
