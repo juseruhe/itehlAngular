@@ -81,10 +81,10 @@
                 <button (click)="mostrarDescuento(element)" type="button" class="acciones" mat-raised-button color="primary" value="{{element.id}}">
                     <mat-icon>visibility</mat-icon> Mostrar
                 </button>
-                <button type="button" class="acciones" mat-raised-button color="accent" value="{{element.id}}">
+                <button (click)="editarDescuento(element)" type="button" class="acciones" mat-raised-button color="accent" value="{{element.id}}">
                     <mat-icon>edit</mat-icon> Editar
                 </button>
-                <button type="button" class="acciones" mat-raised-button color="warn" value="{{element.id}}">
+                <button (click)="eliminarDescuento(element)" type="button" class="acciones" mat-raised-button color="warn" value="{{element.id}}">
                     <mat-icon>remove_circle</mat-icon> Eliminar
                 </button>
             </td>

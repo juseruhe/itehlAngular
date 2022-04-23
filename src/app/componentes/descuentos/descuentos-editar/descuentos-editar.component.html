@@ -1,1 +1,47 @@
-<p>descuentos-editar works!</p>
+<h2 mat-dialog-title>Editar Descuento  Curso: {{editarDescuento.curso}}
+     / Modalidad: {{editarDescuento.modalidad}}
+</h2>
+<form [formGroup]="descuentoForm">
+  <mat-dialog-content>
+  
+     <input mat-input type="hidden" formControlName="id" [value]="editarDescuento.id">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre del Descuento</mat-label>
+      <input matInput type="text" formControlName="nombre">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Curso/Modalidad:</mat-label>
+      <mat-select formControlName="curso_modalidad_id">
+        <mat-option *ngFor="let curso_modalidad of cursos_modalidades" [value]="curso_modalidad.id">
+         {{curso_modalidad.curso}}/{{curso_modalidad.modalidad}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>País:</mat-label>
+        <mat-select formControlName="pais_id">
+          <mat-option *ngFor="let pais of paises" [value]="pais.id">
+           {{pais.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha Final:</mat-label>
+        <input matInput type="date" formControlName="fecha_final">
+      </mat-form-field>
+
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button (click)="actualizarDescuento()"   mat-raised-button color="accent">
+      <mat-icon>check</mat-icon> Actualizar
+    </button>
+    <button mat-raised-button color="warn" mat-dialog-close>
+      <mat-icon>clear</mat-icon> Cerrar
+    </button>
+  </mat-dialog-actions>
+</form>

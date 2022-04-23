@@ -1,6 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-
-declare var $: any;
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -10,12 +9,9 @@ declare var $: any;
 export class AppComponent {
   title = 'itehl';
 
-
-  // JQuery
   ngAfterViewInit() {
-    $(document).ready(function () {
-
-    });
+   
   }
 
+ 
 }

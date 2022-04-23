@@ -73,7 +73,9 @@ import { CursosModalidadesEditarErrorComponent } from './componentes/cursos-moda
 import { CursosModalidadesEliminarComponent } from './componentes/cursos-modalidades/cursos-modalidades-eliminar/cursos-modalidades-eliminar.component';
 import { CursosModalidadesEliminarExitosoComponent } from './componentes/cursos-modalidades/cursos-modalidades-eliminar-exitoso/cursos-modalidades-eliminar-exitoso.component';
 import { CursosModalidadesEliminarErrorComponent } from './componentes/cursos-modalidades/cursos-modalidades-eliminar-error/cursos-modalidades-eliminar-error.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +135,7 @@ import { CursosModalidadesEliminarErrorComponent } from './componentes/cursos-mo
     CursosModalidadesEliminarComponent,
     CursosModalidadesEliminarExitosoComponent,
     CursosModalidadesEliminarErrorComponent,
+    NavbarComponent,
     
    
   ],
@@ -155,7 +158,9 @@ import { CursosModalidadesEliminarErrorComponent } from './componentes/cursos-mo
     MatCardModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatToolbarModule,
+    MatSidenavModule
    
   ],
   providers: [],

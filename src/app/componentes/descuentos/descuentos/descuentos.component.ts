@@ -11,6 +11,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DescuentosCrearComponent } from '../descuentos-crear/descuentos-crear.component';
 import { DatePipe } from '@angular/common';
 import { DescuentosMostrarComponent } from '../descuentos-mostrar/descuentos-mostrar.component';
+import { DescuentosEditarComponent } from '../descuentos-editar/descuentos-editar.component';
+import { DescuentosEliminarComponent } from '../descuentos-eliminar/descuentos-eliminar.component';
 
 const DATA: Descuento[] = [];
 
@@ -86,6 +88,16 @@ export class DescuentosComponent implements OnInit {
     // Modal para mostrar descuento
     mostrarDescuento(element: any){
       this.dialog.open(DescuentosMostrarComponent,{data: element})
+    }
+
+    // Modal para Editar descuento
+    editarDescuento(element: any){
+      this.dialog.open(DescuentosEditarComponent,{data: element})
+    }
+    
+    //Modal para Eliminar descuento
+    eliminarDescuento(element: any){
+      this.dialog.open(DescuentosEliminarComponent,{data: element})
     }
 
 }

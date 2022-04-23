@@ -31,4 +31,13 @@ export class DescuentoService {
      })
    )
  }
+
+ actualizarDescuento(id:any,descuento:any){
+   return this.http.put(this.url+"/"+id,descuento)
+   .pipe(
+     tap(()=>{
+       this.refresh.next()
+     })
+   )
+ }
 }
