@@ -5,6 +5,9 @@ import { CursoService } from 'src/app/servicios/curso.service';
 import { DescuentoService } from 'src/app/servicios/descuento.service';
 import { PaisServiceService } from 'src/app/servicios/pais-service.service';
 import {ModalidadService} from 'src/app/servicios/modalidad.service';
+import { CursoModalidadService } from 'src/app/servicios/curso-modalidad.service';
+import { DescuentosCrearExitosoComponent } from '../descuentos-crear-exitoso/descuentos-crear-exitoso.component';
+import { DescuentosCrearErrorComponent } from '../descuentos-crear-error/descuentos-crear-error.component';
 
 
 @Component({
@@ -13,36 +16,28 @@ import {ModalidadService} from 'src/app/servicios/modalidad.service';
   styleUrls: ['./descuentos-crear.component.css']
 })
 export class DescuentosCrearComponent implements OnInit {
-  cursos: any
+  cursos_modalidades: any
   paises:any
-  modalidades: any
   
   descuentoForm !: FormGroup
 
   constructor(private paisService: PaisServiceService, 
-    public dialog: MatDialog, private cursoService: CursoService,
-    private formBuilder: FormBuilder, private service: DescuentoService,
-    private modalidadService: ModalidadService) { }
+    public dialog: MatDialog, private cursoModalidadService: CursoModalidadService,
+    private formBuilder: FormBuilder, private service: DescuentoService) { }
 
   ngOnInit(): void {
-    this.cursoService.mostrarCursos().subscribe(respuesta =>{
+    this.cursoModalidadService.mostrarCursosModalidades().subscribe(respuesta =>{
       console.log(respuesta)
-      this.cursos = respuesta
+      this.cursos_modalidades = respuesta
     })
 
     this.paisService.mostrarPaises().subscribe(respuesta => {
       this.paises = respuesta
     })
 
-    this.modalidadService.mostrarModalidades().subscribe(respuesta => {
-      this.modalidades = respuesta
-    })
-
-    console.log(this.modalidades)
-
     this.descuentoForm = this.formBuilder.group({
       nombre: ["",Validators.required],
-      curso_id: ["",Validators.required],
+      curso_modalidad_id: ["",Validators.required],
       pais_id: ["",Validators.required],
       fecha_final: ["",Validators.required]
     })
@@ -50,14 +45,14 @@ export class DescuentosCrearComponent implements OnInit {
 
   insertarDescuento(){
     if(this.descuentoForm.valid){
-      this.descuentoForm.value.curso = {id: this.descuentoForm.value.curso_id}
-      this.descuentoForm.value.pais = {id: this.descuentoForm.value.pais_id}
 
       this.service.insertarDescuento(this.descuentoForm.value)
       .subscribe(respuesta => {
-        console.log(respuesta)
+        this.dialog.closeAll()
+        this.dialog.open(DescuentosCrearExitosoComponent)
       },error => {
-        console.log(error)
+        this.dialog.closeAll()
+        this.dialog.open(DescuentosCrearErrorComponent)
       })
     }
 

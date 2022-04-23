@@ -10,6 +10,7 @@ import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { DescuentosCrearComponent } from '../descuentos-crear/descuentos-crear.component';
 import { DatePipe } from '@angular/common';
+import { DescuentosMostrarComponent } from '../descuentos-mostrar/descuentos-mostrar.component';
 
 const DATA: Descuento[] = [];
 
@@ -68,7 +69,7 @@ export class DescuentosComponent implements OnInit {
     }
   
     // Datatable
-    displayedColumns: string[] = ['posicion', 'nombre','curso','modalidad','descuento','pais','fecha_final','id'];
+    displayedColumns: string[] = ['posicion', 'nombre','curso','modalidad','costo','descuento','pais','fecha_final','id'];
     dataSource = new MatTableDataSource<Descuento>([]);
   
     // Filtro
@@ -80,6 +81,11 @@ export class DescuentosComponent implements OnInit {
     // Modal para insertar descuento
     crearDescuento(){
       this.dialog.open(DescuentosCrearComponent)
+    }
+
+    // Modal para mostrar descuento
+    mostrarDescuento(element: any){
+      this.dialog.open(DescuentosMostrarComponent,{data: element})
     }
 
 }

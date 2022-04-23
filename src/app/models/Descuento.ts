@@ -1,8 +1,12 @@
 export interface Descuento{
-    id: string;
+    id: number;
     nombre: string;
-    curso_id: string;
-    pais_id:string;
+    curso_modalidad_id: number;
+    pais_id:number;
+    pais: string;
     fecha_final:string;
+    descripcion: string;
+    dirigido_a: string;
+    modalidad:string;
 
 }

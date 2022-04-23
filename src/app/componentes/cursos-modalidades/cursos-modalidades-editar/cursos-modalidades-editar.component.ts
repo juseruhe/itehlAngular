@@ -32,8 +32,8 @@ export class CursosModalidadesEditarComponent implements OnInit {
 
     if (this.editarCursoModalidad) {
       this.cursoModalidadForm.controls["id"].setValue(this.editarCursoModalidad.id)
-      this.cursoModalidadForm.controls["curso_id"].setValue(this.editarCursoModalidad.curso.id)
-      this.cursoModalidadForm.controls["modalidad_id"].setValue(this.editarCursoModalidad.modalidad.id)
+      this.cursoModalidadForm.controls["curso_id"].setValue(this.editarCursoModalidad.curso_id)
+      this.cursoModalidadForm.controls["modalidad_id"].setValue(this.editarCursoModalidad.modalidad_id)
     
     }
 
@@ -49,8 +49,6 @@ export class CursosModalidadesEditarComponent implements OnInit {
 
   actualizarCursoModalidad(){
     if(this.cursoModalidadForm.valid){
-    this.cursoModalidadForm.value.curso = {id: this.cursoModalidadForm.value.curso_id}
-    this.cursoModalidadForm.value.modalidad = {id: this.cursoModalidadForm.value.modalidad_id}
     this.service.actualizarCursoModalidad(this.cursoModalidadForm.value.id,this.cursoModalidadForm.value)
     .subscribe(respuesta => {
       this.dialog.closeAll()

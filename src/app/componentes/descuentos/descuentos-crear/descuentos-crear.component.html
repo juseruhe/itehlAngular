@@ -7,9 +7,10 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Curso:</mat-label>
-      <mat-select (change)="valorModalidad($event.target.value)"  formControlName="curso_id">
-        <mat-option   *ngFor="let curso of cursos" [value]="curso.id">{{curso.nombre}}
+      <mat-label>Curso/Modalidad:</mat-label>
+      <mat-select formControlName="curso_modalidad_id">
+        <mat-option *ngFor="let curso_modalidad of cursos_modalidades" [value]="curso_modalidad.id">
+          Curso: {{curso_modalidad.curso}} / Modalidad: {{curso_modalidad.modalidad}}
         </mat-option>
       </mat-select>
     </mat-form-field>

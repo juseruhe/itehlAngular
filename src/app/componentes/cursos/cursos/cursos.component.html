@@ -36,22 +36,6 @@
             <td mat-cell *matCellDef="let element">${{element.costo}} </td>
         </ng-container>
 
-        <!-- Descripción -->
-        <ng-container matColumnDef="descripcion">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by descripcion">
-                Descripción
-            </th>
-            <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
-        </ng-container>
-
-        <!-- Dirigido a -->
-        <ng-container matColumnDef="dirigido_a">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by dirigido_a"> Dirigido
-                a:
-            </th>
-            <td mat-cell *matCellDef="let element"> {{element.dirigido_a}} </td>
-        </ng-container>
-
         <!-- Acciones -->
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">Acciones
@@ -82,6 +66,6 @@
         </tr>
     </table>
 
-    <mat-paginator [pageSizeOptions]="[2,5,10, 25,50,100]">
+    <mat-paginator [pageSizeOptions]="[5,10, 25,50,100]">
     </mat-paginator>
 </div>

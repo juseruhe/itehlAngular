@@ -70,7 +70,7 @@ export class CursosComponent implements AfterViewInit, OnInit {
   }
 
   // Datatable
-  displayedColumns: string[] = ['posicion', 'nombre','costo','descripcion','dirigido_a', 'id'];
+  displayedColumns: string[] = ['posicion', 'nombre','costo', 'id'];
   dataSource = new MatTableDataSource<Curso>([]);
 
   // Filtro

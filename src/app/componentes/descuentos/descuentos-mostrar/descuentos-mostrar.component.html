@@ -1,1 +1,31 @@
-<p>descuentos-mostrar works!</p>
+<mat-card>
+
+    <mat-card-title mat-dialog-title>
+        <p class="ahora">Curso: {{mostrarDescuento.curso}} / Modalidad: {{mostrarDescuento.modalidad}}</p>
+        Descuento del {{mostrarDescuento.nombre}} 
+        <p class="ahora">{{(100-(mostrarDescuento.descuento*100)/mostrarDescuento.costo)}}%</p>
+        Precio
+       <p class="despues">${{mostrarDescuento.descuento}}</p> 
+        </mat-card-title>
+
+    <mat-card-content>
+        <mat-dialog-content>
+            <b>Antes:</b> <p class="antes"> ${{mostrarDescuento.costo}}</p>
+            <b>Valor descontado:</b> <p class="antes">-{{mostrarDescuento.costo-mostrarDescuento.descuento}}</p>
+            <p><b>Descripción:</b> {{mostrarDescuento.descripcion}}</p>
+            <p><b>Dirigido a:</b> {{mostrarDescuento.dirigido_a}}</p>
+            <p><b>País:</b> {{mostrarDescuento.pais}}</p>
+            <b>Fecha Final:</b> <p class="fecha">{{pipe.transform(mostrarDescuento.fecha_final,"dd/MM/yyyy")}}</p>
+        </mat-dialog-content>
+    </mat-card-content>
+
+    <mat-card-actions>
+
+        <mat-dialog-actions>
+            <button mat-raised-button color="warn" mat-dialog-close>
+                <mat-icon>clear</mat-icon> Cerrar
+            </button>
+        </mat-dialog-actions>
+    </mat-card-actions>
+
+</mat-card>

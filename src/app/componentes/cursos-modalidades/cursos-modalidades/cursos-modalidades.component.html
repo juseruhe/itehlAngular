@@ -26,14 +26,14 @@
         <ng-container matColumnDef="curso_id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by curso_id"> Curso
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.curso.nombre}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.curso}} </td>
         </ng-container>
 
         <!-- Modalidad -->
         <ng-container matColumnDef="modalidad_id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by modalidad.id"> Modalidad
             </th>
-            <td mat-cell *matCellDef="let element"> {{element.modalidad.nombre}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.modalidad}} </td>
         </ng-container>
 
         <!-- Acciones -->
