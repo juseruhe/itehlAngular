@@ -56,6 +56,7 @@ export class DescuentosEditarComponent implements OnInit {
     if (this.descuentoForm.valid) {
       this.service.actualizarDescuento(this.descuentoForm.value.id, this.descuentoForm.value)
         .subscribe(respuesta => {
+          console.log(respuesta)
           this.dialog.closeAll()
           this.dialog.open(DescuentosEditarExitosoComponent)
         }, error => {

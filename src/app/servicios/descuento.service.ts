@@ -40,4 +40,13 @@ export class DescuentoService {
      })
    )
  }
+
+ eliminarDescuento(id:any){
+   return this.http.delete(this.url+"/"+id)
+   .pipe(
+     tap(()=>{
+       this.refresh.next()
+     })
+   )
+ }
 }
