@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
 import { DescuentosMostrarComponent } from '../descuentos-mostrar/descuentos-mostrar.component';
 import { DescuentosEditarComponent } from '../descuentos-editar/descuentos-editar.component';
 import { DescuentosEliminarComponent } from '../descuentos-eliminar/descuentos-eliminar.component';
+import { holdReady } from 'jquery';
 
 const DATA: Descuento[] = [];
 
@@ -25,6 +26,9 @@ export class DescuentosComponent implements OnInit {
   descuentos: any
   subscription: Subscription
   pipe = new DatePipe('en-US');
+  hoy = new Date()
+  fecha = this.hoy.getDay() * this.hoy.getMonth() * this.hoy.getFullYear()
+  
 
   constructor(private service: DescuentoService, private route: Router,
     private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog) { }
@@ -33,6 +37,7 @@ export class DescuentosComponent implements OnInit {
     this.service.mostrarDescuentos().subscribe(respuesta => {
       console.log(respuesta)
       this.dataSource.data = respuesta
+      
     })
 
     this.subscription = this.service.getRefresh().subscribe(() =>{

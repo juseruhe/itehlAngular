@@ -76,6 +76,7 @@ import { CursosModalidadesEliminarErrorComponent } from './componentes/cursos-mo
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -136,6 +137,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     CursosModalidadesEliminarExitosoComponent,
     CursosModalidadesEliminarErrorComponent,
     NavbarComponent,
+    FooterComponent,
     
    
   ],

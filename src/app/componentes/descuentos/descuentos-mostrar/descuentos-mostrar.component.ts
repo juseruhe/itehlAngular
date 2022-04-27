@@ -9,6 +9,7 @@ import { DatePipe } from '@angular/common';
 })
 export class DescuentosMostrarComponent implements OnInit {
   pipe = new DatePipe('en-US');
+  hoy = new Date()
 
   constructor(@Inject(MAT_DIALOG_DATA) public mostrarDescuento: any,
   private dialog:MatDialog) { }

@@ -2,20 +2,32 @@
 
     <mat-card-title mat-dialog-title>
         <p class="ahora">Curso: {{mostrarDescuento.curso}} / Modalidad: {{mostrarDescuento.modalidad}}</p>
-        Descuento del {{mostrarDescuento.nombre}} 
+        Descuento del {{mostrarDescuento.nombre}}
         <p class="ahora">{{(100-(mostrarDescuento.descuento*100)/mostrarDescuento.costo)}}%</p>
         Precio
-       <p class="despues">${{mostrarDescuento.descuento}}</p> 
-        </mat-card-title>
+        <p class="despues">${{mostrarDescuento.descuento}}</p>
+    </mat-card-title>
 
     <mat-card-content>
         <mat-dialog-content>
-            <b>Antes:</b> <p class="antes"> ${{mostrarDescuento.costo}}</p>
-            <b>Valor descontado:</b> <p class="antes">-{{mostrarDescuento.costo-mostrarDescuento.descuento}}</p>
+            <b>Antes:</b>
+            <p class="antes"> ${{mostrarDescuento.costo}}</p>
+            <b>Valor descontado:</b>
+            <p class="antes">-{{mostrarDescuento.costo-mostrarDescuento.descuento}}</p>
             <p><b>Descripción:</b> {{mostrarDescuento.descripcion}}</p>
             <p><b>Dirigido a:</b> {{mostrarDescuento.dirigido_a}}</p>
             <p><b>País:</b> {{mostrarDescuento.pais}}</p>
-            <b>Fecha Final:</b> <p class="fecha">{{pipe.transform(mostrarDescuento.fecha_final,"dd/MM/yyyy")}}</p>
+            <b>Fecha Final:</b>
+            <div *ngIf="pipe.transform(hoy,'yyyy/MM/dd') 
+               <= pipe.transform(mostrarDescuento.fecha_final,'yyyy/MM/dd')
+              then luego else sino"></div>
+            <ng-template #luego>
+                <p class="fecha">{{pipe.transform(mostrarDescuento.fecha_final,"dd/MM/yyyy")}}</p>
+            </ng-template>
+            <ng-template #sino>
+                <p class="antes">VENCIDO -> {{pipe.transform(mostrarDescuento.fecha_final,"dd/MM/yyyy")}} </p>
+            </ng-template>
+
         </mat-dialog-content>
     </mat-card-content>
 
